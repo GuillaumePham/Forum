@@ -1,0 +1,251 @@
+body{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgb(39, 23, 16);
+    background-attachment:fixed;
+}
+
+.titre{
+    text-align: center;
+    font-size: 300%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.soustitre{
+    text-align: center;
+    font-size: 200%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.choix {
+    display: flex;
+    margin-top: 12vw;
+    text-align: center;
+    justify-content: space-around;
+}
+
+.choix a{
+    color: white;
+    text-decoration: none;
+}
+
+.choix a:hover{
+    color: black;
+}
+
+.compte{
+    position: absolute;
+    display: flex;
+    margin-top: -50vh;
+    margin-left: 40vw;
+    text-decoration: none;
+}
+
+.compte:hover{
+    color:black
+}
+
+.recherche input{
+    flex-wrap: wrap;
+    width: 20%;
+}
+
+#input-search{
+    margin: auto;
+    padding: 15px;
+    border-radius: 30px;
+    border: 3px solid rgb(0, 0, 0);
+    outline: none;
+    width: 200px;
+    padding-left: 20px;
+    background-color: rgb(253, 253, 253);
+    transition: width 0.7s;
+    -moz-transition: width 0.7s;
+    cursor: pointer;
+    overflow: hidden;
+    display: block;
+    position: absolute;
+    left: 85%;
+}
+
+#connecter{
+    position: absolute;
+    display: flex;
+    margin-top: -50vh;
+    margin-left: 40vw;
+    flex-wrap: wrap;
+    cursor: pointer;
+    overflow: hidden;
+    flex-direction: column;
+}
+
+#connecterm{
+    position: absolute;
+    display: flex;
+    margin-top: -40vh;
+    margin-left: 40vw;
+    flex-wrap: wrap;
+    cursor: pointer;
+    overflow: hidden;
+    flex-direction: column;
+}
+
+.illustration{
+    width: 80vw;
+    height: 100vh;
+    margin-top: 10vh;
+    margin-left: 10vw;
+}
+
+.illustration2{
+    position: absolute;
+    width: 60vw;
+    height: 30vh;
+    margin-top: -120vh;
+    margin-left: 20vw;
+}
+
+.recherche{
+   position: absolute;
+   margin-top: -110vh;
+   margin-left: 50vw;
+}
+
+.lien{
+    position: absolute;
+    margin-top: 2vh;
+    margin-left: -10vw;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+    background-color: rgba(240, 248, 255, 0.268);
+    padding: 2vh;
+}
+
+.lien2{
+    position: absolute;
+    margin-top: 0,5vh;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+    background-color: rgba(240, 248, 255, 0.268);
+    padding: 1vh;
+}
+
+.rectangle{
+    position: absolute;
+    background-color: white;
+    margin-top: -45vh;
+    margin-left: 10vw;
+    width: 80vw;
+    height: 90vh;
+}
+
+.rectangle2{
+    position: absolute;
+    background-color: rgb(39, 23, 16);
+    margin-left: 10vw;
+    margin-top: -40vh;
+    width: 80vw;
+    height: 8vh;
+}
+
+.rectangle2 > h1{
+    margin-top: 1vh;
+    color: white;
+}
+
+.rectangle3{
+    position: absolute;
+    background-color: rgb(39, 23, 16);
+    width: 80vw;
+    height: 8vh;
+    margin-left: 10vw;
+}
+
+.rectangle3 > h1{
+    margin-top: -1vh;
+    color: white;
+}
+
+.rectangle4{
+    background-color: white;
+    margin-top: -45vh;
+    margin-left: 10vw;
+    width: 80vw;
+    height: 160vh;
+}
+
+.rectangle5{
+    position: absolute;
+    background-color: rgb(39, 23, 16);
+    margin-top: -90vh;
+    margin-left: 20vw;
+    width: 60vw;
+    height: 4vh;
+}
+
+.par {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: -10vh;
+    margin-left: 60vw;
+}
+.par p{
+    color: white;
+}
+
+.table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 2rem;
+    background-color: transparent;
+}
+.table thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #dee2e6;
+}
+.table td, .table th {
+    padding: .75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+}
+
+table thead {
+    background-color: rgb(39, 23, 16);
+    color: white;
+}
+
+td {
+    border: solid ;
+    height: 50px;
+    width: calc(100%/3,5);
+}
+
+.viking >td {
+    font-size: 10vh;
+    height: 100px;
+}
+.inscription{
+    display: flex;
+    position: absolute;
+    border: solid;
+    height: 75vh;
+    width: 60vw;
+    margin-top: 35vh;
+    margin-left: 20vw;
+    justify-content: center;
+   
+}
+
+.infoInscription{
+    position: absolute;
+}
+
+.trait{
+    margin-top: 10vh;
+    width: 922px;
+    height: 3px;
+    border-bottom: solid 2px black;
+}
