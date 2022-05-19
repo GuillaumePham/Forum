@@ -1,0 +1,106 @@
+CREATE TABLE Users(
+   id VARCHAR(50),
+   Pseudo VARCHAR(50),
+   adresse_mail VARCHAR(50),
+   motdepasse VARCHAR(50),
+   poste_id VARCHAR(50),
+   messageid VARCHAR(50),
+   gradeid VARCHAR(50),
+   amiid VARCHAR(50),
+   commentairesid VARCHAR(50),
+   PRIMARY KEY(id)
+);
+
+CREATE TABLE Publication(
+   publi_id VARCHAR(50),
+   Contenu VARCHAR(50),
+   topic VARCHAR(50),
+   likeid VARCHAR(50),
+   statut_id VARCHAR(50),
+   idcommentaires VARCHAR(50),
+   PRIMARY KEY(publi_id)
+);
+
+CREATE TABLE aime(
+   idlike VARCHAR(50),
+   mention_aime VARCHAR(50),
+   PRIMARY KEY(idlike)
+);
+
+CREATE TABLE tag(
+   idtag VARCHAR(50),
+   tag VARCHAR(50),
+   PRIMARY KEY(idtag)
+);
+
+CREATE TABLE commentaires(
+   idcommentaires VARCHAR(50),
+   contenu VARCHAR(50),
+   autheur VARCHAR(50),
+   PRIMARY KEY(idcommentaires)
+);
+
+CREATE TABLE statut(
+   statutid VARCHAR(50),
+   ouvert VARCHAR(50),
+   fermer VARCHAR(50),
+   publi_id VARCHAR(50) NOT NULL,
+   PRIMARY KEY(statutid),
+   UNIQUE(publi_id),
+   FOREIGN KEY(publi_id) REFERENCES Publication(publi_id)
+);
+
+CREATE TABLE message(
+   idmessage VARCHAR(50),
+   contenu VARCHAR(50),
+   titre_ VARCHAR(50),
+   autheur VARCHAR(50),
+   PRIMARY KEY(idmessage)
+);
+
+CREATE TABLE poste_id(
+   id VARCHAR(50),
+   publi_id VARCHAR(50),
+   publie VARCHAR(50),
+   PRIMARY KEY(id, publi_id),
+   FOREIGN KEY(id) REFERENCES Users(id),
+   FOREIGN KEY(publi_id) REFERENCES Publication(publi_id)
+);
+
+CREATE TABLE like_id(
+   publi_id VARCHAR(50),
+   idlike VARCHAR(50),
+   possede VARCHAR(50),
+   PRIMARY KEY(publi_id, idlike),
+   FOREIGN KEY(publi_id) REFERENCES Publication(publi_id),
+   FOREIGN KEY(idlike) REFERENCES aime(idlike)
+);
+
+CREATE TABLE tag_id(
+   publi_id VARCHAR(50),
+   idtag VARCHAR(50),
+   posséde VARCHAR(50),
+   PRIMARY KEY(publi_id, idtag),
+   FOREIGN KEY(publi_id) REFERENCES Publication(publi_id),
+   FOREIGN KEY(idtag) REFERENCES tag(idtag)
+);
+
+CREATE TABLE idcommentaires(
+   id VARCHAR(50),
+   publi_id VARCHAR(50),
+   idcommentaires VARCHAR(50),
+   possede VARCHAR(50),
+   PRIMARY KEY(id, publi_id, idcommentaires),
+   FOREIGN KEY(id) REFERENCES Users(id),
+   FOREIGN KEY(publi_id) REFERENCES Publication(publi_id),
+   FOREIGN KEY(idcommentaires) REFERENCES commentaires(idcommentaires)
+);
+
+CREATE TABLE messageid(
+   id VARCHAR(50),
+   idmessage VARCHAR(50),
+   possede VARCHAR(50),
+   PRIMARY KEY(id, idmessage),
+   FOREIGN KEY(id) REFERENCES Users(id),
+   FOREIGN KEY(idmessage) REFERENCES message(idmessage)
+);
