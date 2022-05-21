@@ -6,7 +6,7 @@
     <head>​
 
         <meta charset="UTF-8" />
-        <link href="../css/compte.css" rel="stylesheet">
+        <link href="../css/style.css" rel="stylesheet">
         <script src="../script/script.js"></script>​​
 
         <title>compte</title>​
@@ -14,15 +14,33 @@
     </head>​
 
     <body>
-        <div class="compte">
-            <form action="/login" method="post">
-                Nom d'utilisateur:<input type="text" name="username">
-                Mot de passe:<input type="password" name="password">
-                <input type="submit" value="Se connecter">
+        <div class="inscription">
+            <h1>Inscription</h1>
+            <div class="infoInscription">
+                <p class="trait"></p>
+            </div>
+        </div>
+        
+        <div class="rectangle4"></div>
+        <div class="connecter">
+            <form action="/login" method="post" >
+                <div id="connecter">
+                    Nom d'utilisateur:<input type="text" name="username">
+                    <br>
+                    <br>
+                </div>
+                <div id="connecterm">
+                    Mot de passe:<input type="password" name="password">
+                    <br>
+                    <br>
+                    <input type="submit" value="connect" name="submit">
+                </div>
+                <br>
+                <br>
                 <a href="creation.html">créer un compte</a>
             </form>
         </div>
-       
+        <img class="illustration2" src="../../image/illustration.png">
     </body>
 
 </html>
