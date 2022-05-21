@@ -1,9 +1,7 @@
 package main
 import(
 	"net/http"
-	"log"
 )
-var tmpl = template.Must(template.ParseFiles("static/html/compte.html"))
 func compte(w http.ResponseWriter, r *http.Request){
 	email := r.FormValue("mail")
 	pseudo := r.FormValue("username")
@@ -11,12 +9,12 @@ func compte(w http.ResponseWriter, r *http.Request){
 	Checkpassword := r.FormValue("password2")
 	if(password == Checkpassword){
 		if (len(password) >= 8){
-			requestDB()
+			requestDB(pseudo, email, password)
 		}
 	}
-	tmpl.Execute(w, tmpl)
+    tmpl.ExecuteTemplate(w, "account", nil)
 }
-func requestDB(pseudo,email,password){
-	rows, _:= db.Query("INSERT INTO `Users` (`id`, `Pseudo`, `adresse_mail`, `motdepasse`) VALUES (DEFAULT,"+ pseudo +","+ email +","+ 4563 ")")
+func requestDB(pseudo, email, password string){
+	rows, _ := db.Query("INSERT INTO `users` (`id`, `pseudo`, `adresse_mail`, `motdepasse`) VALUES (DEFAULT, ?, ?, ?)",pseudo, email, password)
 	defer rows.Close()
 }

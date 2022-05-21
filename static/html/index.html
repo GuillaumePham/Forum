@@ -1,0 +1,31 @@
+{{define "home"}}
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <link rel="shortcut icon" href="ccs/img/icone.ico" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/c6d2413c18.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>menu</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+  </head>
+    <body>
+      <div class="container">
+        <form method="post">
+			<input type="text" id="fname" name="pseudo" placeholder="Nom" required>
+			<label for="fname">Pseudo</label>
+		
+			
+			<input type="text" id="lname" name="adresse_mail" placeholder="Prénom" required>
+			<label for="lname">Adresse mail</label>
+		
+			
+			<input type="password" id="password" name="password" placeholder="Password" required>
+			<label for="password">Mot de passe</label>
+			<input type="submit" value="Submit" name="submit">
+        </form>
+      </div>
+    </body>
+</html>
+{{end}}

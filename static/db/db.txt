@@ -1,8 +1,8 @@
 CREATE TABLE Users(
-   id VARCHAR(50),
+   id VARCHAR(50) NOT NULL AUTO-INCREMENT,
    Pseudo VARCHAR(50),
    adresse_mail VARCHAR(50),
-   motdepasse VARCHAR(50),
+   motdepasse VARCHAR(50) NOT NULL,
    poste_id VARCHAR(50),
    messageid VARCHAR(50),
    gradeid VARCHAR(50),
