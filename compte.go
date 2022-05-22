@@ -2,7 +2,7 @@ package main
 import(
 	"net/http"
 )
-func compte(w http.ResponseWriter, r *http.Request){
+/*func compte(w http.ResponseWriter, r *http.Request){
 	email := r.FormValue("mail")
 	pseudo := r.FormValue("username")
 	password := r.FormValue("password")
@@ -18,3 +18,4 @@ func requestDB(pseudo, email, password string){
 	rows, _ := db.Query("INSERT INTO `users` (`id`, `pseudo`, `adresse_mail`, `motdepasse`) VALUES (DEFAULT, ?, ?, ?)",pseudo, email, password)
 	defer rows.Close()
 }
+*/

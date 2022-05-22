@@ -24,9 +24,9 @@ type ALL struct{
 
 const (
 	Host = "localhost"
-	Port = "8070"
+	Port = "4444"
 )
-
+var megapassword string
 var data = ALL{}
 var db *sql.DB
 var tmpl *template.Template
@@ -42,9 +42,7 @@ func pages(w http.ResponseWriter, r *http.Request){
         dbz(w, r, register)
 
     }
-    tmpl.ExecuteTemplate(w, "home", nil)
-
-
+    tmpl.ExecuteTemplate(w, "home", data)
 }
 /*func user(){
     rows, err:= db.Query(fmt.Sprintf("INSERT INTO users (`id`, `pseudo`, `adresse_mail`, `password`) VALUES (DEFAULT,'%s', '%s', '%s')", register.Pseudo, register.Adresse_mail, register.Password))
@@ -54,33 +52,37 @@ func pages(w http.ResponseWriter, r *http.Request){
     defer rows.Close()
 }*/
 func connectUser(name string) (Users, error){
+    log.Println(name)
     user := Users{}
     getuser:= fmt.Sprintf("SELECT * FROM users WHERE pseudo='%s'", name)
     err := db.QueryRow(getuser).Scan(&user.id, &user.Pseudo,&user.Adresse_mail, &user.Password)
+    log.Println("mdp : " + user.Password)
+    megapassword = user.Password
     return user, err
 }
 func login(w http.ResponseWriter, r *http.Request){
     log.Println("funtion calling")
-    user := Users{}
+    data.User = Users{}
     name := r.FormValue("username")
     password := r.FormValue("password")
     log.Println("test")
-    
-    if r.FormValue("submit") == "connect"{
+    log.Println(r.FormValue("submit"))
+    if r.FormValue("submit") != ""{
         log.Println("oui")
         connectUser(name)
-        log.Println(password)
-        log.Println(user.Password)
-        /*if password == user.Password{
-            log.Println(user.Pseudo)
+        log.Println(megapassword)
+        log.Println("password")
+        log.Println(data.User.Password)
+        if password == megapassword{
+            log.Println(data.User.Pseudo)
             data.connect = true
-            //http.Redirect(w, r, "http://" + Host + ":" + Port + "/test", http.StatusMovedPermanently)
+            http.Redirect(w, r, "http://" + Host + ":" + Port + "/test", http.StatusMovedPermanently)
         }else{
             log.Println("wrong password")
             data.connect = false
-        }*/
+        }
     }
-    tmpl.ExecuteTemplate(w, "account", data)
+    tmpl.ExecuteTemplate(w, "login", data)
 }
 func dbz(w http.ResponseWriter, r *http.Request, register Users){
     rows, err:= db.Query("INSERT INTO users (`pseudo`, `adresse_mail`, `motdepasse`) VALUES (?,?,?)", register.Pseudo, register.Adresse_mail, register.Password)
@@ -94,7 +96,7 @@ func dbz(w http.ResponseWriter, r *http.Request, register Users){
     fmt.Fprint(w, oui)
     defer rows.Close()
 
-    /*for rows.Next() {
+    /*  for rows.Next() {
         var id_user int
         var firstname string
         var lastname string
