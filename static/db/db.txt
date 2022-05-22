@@ -3,11 +3,6 @@ CREATE TABLE Users(
    Pseudo VARCHAR(50),
    adresse_mail VARCHAR(50),
    motdepasse VARCHAR(50) NOT NULL,
-   poste_id VARCHAR(50),
-   messageid VARCHAR(50),
-   gradeid VARCHAR(50),
-   amiid VARCHAR(50),
-   commentairesid VARCHAR(50),
    PRIMARY KEY(id)
 );
 

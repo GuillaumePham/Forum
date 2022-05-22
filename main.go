@@ -22,10 +22,16 @@ type ALL struct{
     connect bool
 }
 
+type publication struct{
+    publi_id int
+    Contenu string
+    topic string
+}
 const (
 	Host = "localhost"
 	Port = "4444"
 )
+
 var megapassword string
 var data = ALL{}
 var db *sql.DB
@@ -113,6 +119,24 @@ func search(){
     fmt.Fprint(w, oui)*/
     
 }
+
+func publishForm(w http.ResponseWriter, r *http.Request){
+    if r.FormValue("publish") != "" {
+        post := publication {
+            Contenu : r.FormValue("contenu"),
+            topic : r.FormValue("topic"),
+        }
+        publish(w, r, post)
+    }
+    tmpl.ExecuteTemplate(w, "public", data)
+}
+func publish(w http.ResponseWriter, r *http.Request, post publication){
+    rows, err:= db.Query("INSERT INTO publication (`Contenu`, `topic`) VALUES (?,?)", post.Contenu,post.topic)
+    if err != nil {
+        log.Fatal(err)
+    }
+    defer rows.Close()
+}
 func main() {
     db, _ = sql.Open( "mysql", "root:@tcp(localhost:3306)/testdb")
     defer db.Close()
@@ -128,6 +152,7 @@ func main() {
 
     http.HandleFunc("/test", pages)
     http.HandleFunc("/connect", login)
+    http.HandleFunc("/publication",publishForm)
     
     print("Lancement de la page instanciée sur : " + Host + ":" + Port ) 
     http.ListenAndServe(Host+":"+Port, nil)
