@@ -13,6 +13,11 @@
     <body class="fist">
       <div class="all">
         <h1>Vie et Culture</h1>
+
+        <form class="recherche">
+          <input type="search" onkeyup="search()" id="input-search" placeholder="Recherche...">
+        </form>
+
         <p id="newMessage"><i>Nouveau message</i></p>
 
         <div class="head">
@@ -20,10 +25,11 @@
         </div>
 
         <div class="publication">
-          <p id="pseudo"><i>Utilisateur</i></p>
+          <p id="pseudo">Utilisateur</p>
+          <img src="../image/Avatar.png" id="Avatar" alt="Avatar">
             <form>
-                <input type="text" id="message" value="contenu" name="contenu">
-                <input type="text" id="sujet" value="topic" placeholder="topic" ><br><br><br>
+                <input type="text" id="message" value="contenu" name="contenu"><br><br>
+                <input type="text" id="sujet" value="topic" placeholder="topic" >
                 <input type="submit" id="send" value="publish" name="publish">
             </form>          
         </div>
