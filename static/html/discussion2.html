@@ -1,0 +1,40 @@
+{{define "public2"}}
+<!DOCTYPE html>​
+<head>
+    <link rel="shortcut icon" href="ccs/img/icone.ico" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/c6d2413c18.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>discussion</title>
+    <link rel="stylesheet" href="../css/style.css" type="text/css">
+  </head>
+<html lang="fr">​
+    <body class="fist">
+      <div class="all">
+        <h1>mythologie</h1>
+
+        <form class="recherche">
+          <input type="search" onkeyup="search()" id="input-search" placeholder="Recherche...">
+        </form>
+
+        <p id="newMessage"><i>Nouveau message</i></p>
+
+        <div class="head">
+          <h2> Sujets</h2>
+        </div>
+
+        <div class="publication">
+          <p id="pseudo">Utilisateur</p>
+          <img src="../image/Avatar.png" id="Avatar" alt="Avatar">
+            <form>
+                <input type="text" id="message" value="contenu" name="contenu"><br><br>
+                <input type="text" id="sujet" value="topic" placeholder="topic" >
+                <input type="submit" id="send" value="publish" name="publish">
+            </form>          
+        </div>
+      </div>
+    </body>
+
+</html>
+{{end}}

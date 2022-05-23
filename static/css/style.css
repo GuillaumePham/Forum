@@ -363,5 +363,62 @@ table tbody tr {
     border-radius: 10rem;
     text-decoration: none;
     
-    
+}
+
+.first{
+    background-color:white;
+}
+
+.head{
+    background-color:rgb(77, 58, 58);
+    padding:1px;
+    text-align: center;
+}
+
+.publication{
+    background-color: rgb(213, 213, 210);
+    border: 2px solid rgb(163, 161, 161);
+    border-radius: 8px;
+    padding:25px;
+}
+
+#pseudo{
+    display:flex;
+    justify-content: flex-start,space-around;
+}
+
+#newMessage{
+    border: 2px solid rgb(163, 161, 161);
+    border-radius:20px;
+    width:150px ;
+    padding:10px;
+    justify-content:flex-end;
+}
+
+#message{
+    position: relative;
+    left:1%;
+    border:white;
+    border-radius:20px;
+    padding:5%;
+    width:80%;
+}
+
+#Avatar{
+    width:10%;
+    float: left;
+    border-radius:50%;
+}
+
+#sujet{
+    position: relative;
+    left:12%;
+    padding: 0rem 2rem 0rem 1rem;
+    width: auto;
+}
+
+#send{
+    position: relative;
+    left:70%;
+    padding: 0rem 2rem 0rem 1rem;
 }
