@@ -1,9 +1,15 @@
 {{define "account"}}
 <!DOCTYPE html>​
 {{template "home" .}}
-<html lang="fr">​
+<html lang="fr">
+    
+    <head>​
+        <meta charset="UTF-8" />
+        <link href="../css/style.css" rel="stylesheet">
+        <script src="../script/script.js"></script>​​
+
+        <title>compte</title>​
     <body>
-<<<<<<< HEAD
         <div class="rectangle4">
             <div class="rectangle5">
                 <img class="illustration2" src="../../image/illustration.png">
@@ -17,33 +23,15 @@
                     </div>
                 </div>
                 <div class="connecter">
-                    <form action="/login" method="post" >
-                        <div id="connecter">
-                            <input type="text"id="connecter" name="username"placeholder="Nom d'utilisateur:">
-                            <br>
-                            <br>
-                        </div>
-                        <div id="connecter">
-                            <input type="password" name="password"placeholder="Mot de passe">
-                            <br>
-                            <br>
-                        </div>
-                        <input type="submit" value="Se connecter">
-                        <br>
-                        <br>
-                        <a href="creation.html">créer un compte</a>
-                    </form>
+                    <input type="text" id="fname" name="username" placeholder="Nom" required>    
                 </div>
+                <div class="connecter2">
+                    <input type="password" id="password" name="password" placeholder="Password" required>
+                </div>
+                <input type="submit" value="Submit" name="submit">
             </div>
         </div>
-        </body>
-</html>
-=======
-        <input type="submit" value="Submit" name="submit">
-        <input type="text" id="fname" name="username" placeholder="Nom" required>
-        <input type="password" id="password" name="password" placeholder="Password" required>
     </body>
 
 </html>
 {{end}}
->>>>>>> 75704c118a5d2e9dc887933c90dc60e4b9b2364f

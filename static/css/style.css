@@ -53,7 +53,7 @@ body{
     background-color: rgb(253, 253, 253);
     transition: width 0.7s;
     -moz-transition: width 0.7s;
-    cursor: pointer;
+     cursor: text;
     overflow: hidden;
     display: block;
     position: absolute;
@@ -61,11 +61,6 @@ body{
 }
 
 .connecter input{
-    flex-wrap: wrap;
-    width: 20%;
-}
-
-#connecter{
     margin: auto;
     padding: 15px;
     border-radius: 30px;
@@ -76,11 +71,29 @@ body{
     background-color: rgb(253, 253, 253);
     transition: width 0.7s;
     -moz-transition: width 0.7s;
-    cursor: pointer;
+     cursor: text;
     overflow: hidden;
     display: block;
     left: 85%;
 }
+
+.connecter2 input{
+    margin: auto;
+    padding: 15px;
+    border-radius: 30px;
+    border: 3px solid rgb(0, 0, 0);
+    outline: none;
+    width: 200px;
+    padding-left: 20px;
+    background-color: rgb(253, 253, 253);
+    transition: width 0.7s;
+    -moz-transition: width 0.7s;
+    cursor: text;
+    overflow: hidden;
+    display: block;
+    left: 85%;
+}
+
 .illustration{
     width: 80vw;
     height: 100vh;
