@@ -142,6 +142,40 @@ func publish(w http.ResponseWriter, r *http.Request, post publication) {
 	}
 	defer rows.Close()
 }
+func publishForm2(w http.ResponseWriter, r *http.Request) {
+	if r.FormValue("publish") != "" {
+		post := publication{
+			Contenu: r.FormValue("contenu"),
+			topic:   r.FormValue("topic"),
+		}
+		publish(w, r, post)
+	}
+	tmpl.ExecuteTemplate(w, "public2", data)
+}
+func publish2(w http.ResponseWriter, r *http.Request, post publication) {
+	rows, err := db.Query("INSERT INTO publication (`Contenu`, `topic`) VALUES (?,?)", post.Contenu, post.topic)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer rows.Close()
+}
+func publishForm3(w http.ResponseWriter, r *http.Request) {
+	if r.FormValue("publish") != "" {
+		post := publication{
+			Contenu: r.FormValue("contenu"),
+			topic:   r.FormValue("topic"),
+		}
+		publish(w, r, post)
+	}
+	tmpl.ExecuteTemplate(w, "public3", data)
+}
+func publish3(w http.ResponseWriter, r *http.Request, post publication) {
+	rows, err := db.Query("INSERT INTO publication (`Contenu`, `topic`) VALUES (?,?)", post.Contenu, post.topic)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer rows.Close()
+}
 func menu(w http.ResponseWriter, r *http.Request) {
 	tmpl.ExecuteTemplate(w, "menu", data)
 }
@@ -162,7 +196,9 @@ func main() {
 
 	http.HandleFunc("/creation", pages)
 	http.HandleFunc("/connect", login)
-	http.HandleFunc("/publication", publishForm)
+	http.HandleFunc("/discussion", publishForm)
+	http.HandleFunc("/discussion2", publishForm2)
+	http.HandleFunc("/discussion3", publishForm3)
 	http.HandleFunc("/", menu)
 	print("Lancement de la page instanciée sur : " + Host + ":" + Port)
 	http.ListenAndServe(Host+":"+Port, nil)
