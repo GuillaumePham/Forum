@@ -87,11 +87,11 @@ body{
     left: 15%;
 }
 .conteneur{
+    display: flex;
+    justify-content: center;
     padding-top:5rem;
     text-align: center;
-    border-radius: 30px;
-    border: 3px solid rgb(0, 0, 0);
-    height: 15rem
+    margin-top: 80vh;
 }
 .bouton{
     text-align: center;
@@ -177,8 +177,8 @@ body{
     background-color: white;
     width: 60.3vw;
     height: 30vh;
-    margin-left: -10vw;
     margin-top: 15vw;
+    margin-left: -19.5vw;
 }
 
 .rectangle5{
@@ -327,12 +327,6 @@ table tbody tr {
 
 .menu{
     background-color: rgb(39, 23, 16);
-}
-.conteneur{
-    margin-top: 1rem;
-    display: flex;
-    justify-content: center;
-    background-color: white;
 }
 .marron{
     text-align: center  ;
