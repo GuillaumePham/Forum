@@ -1,5 +1,7 @@
 <!DOCTYPE html>​
 
+{{template "home" .}}
+{{define "creation"}}
 <html lang="fr">​
 
     <head>​
@@ -13,6 +15,7 @@
     </head>​
 
     <body>
+<<<<<<< HEAD
         <div class="rectangle4">
             <div class="rectangle5">
                 <img class="illustration2" src="../../image/illustration.png">
@@ -47,3 +50,27 @@
         </div>
         </body>
 </html>
+=======
+        <body>
+            <div class="container">
+              <form method="post">
+                  <input type="text" id="fname" name="pseudo" placeholder="Nom" required>
+                  <label for="fname">Pseudo</label>
+              
+                  
+                  <input type="text" id="lname" name="adresse_mail" placeholder="Prénom" required>
+                  <label for="lname">Adresse mail</label>
+              
+                  
+                  <input type="password" id="password" name="password" placeholder="Password" required>
+                  <label for="password">Mot de passe</label>
+                  <input type="submit" value="Submit" name="submit">
+              </form>
+            </div>
+          </body>
+        </form>
+    </body>
+
+</html>
+{{end}}
+>>>>>>> 75704c118a5d2e9dc887933c90dc60e4b9b2364f
