@@ -74,17 +74,20 @@ body{
 }
 
 .connecter > input{
-    display: block;
+    display: flex;
     padding: 15px;
     border-radius: 30px;
     border: 3px solid rgb(0, 0, 0);
     background-color: rgb(253, 253, 253);
     cursor: text;
+    align-items: center;
 }
 
 .connecter > form{
+    display: flex;
     position: relative;
     left: 15%;
+    justify-content: center;
 }
 .conteneur{
     display: flex;
@@ -179,6 +182,21 @@ body{
     height: 30vh;
     margin-top: 15vw;
     margin-left: -19.5vw;
+}
+
+.rectangle7{
+    background-color: white;
+    margin-top: -75vh;
+    margin-left: 10vw;
+    width: 80vw;
+    height: 190vh;
+}
+.rectangle7 img{
+    background-color: white;
+    width: 60.3vw;
+    height: 30vh;
+    margin-top: 25vw;
+    margin-left: -10vw;
 }
 
 .rectangle5{
