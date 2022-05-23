@@ -13,36 +13,37 @@
     </head>​
 
     <body>
-        <div class="inscription">
-            <h1>Inscription</h1>
-            <div class="infoInscription">
-                <p class="trait"></p>
+        <div class="rectangle4">
+            <div class="rectangle5">
+                <img class="illustration2" src="../../image/illustration.png">
+                <div class="rectangle6">
+                    <a class ="lien2" href="menu.html">retour au menu</a>
+                </div>
+                <div class="inscription">
+                    <h1>Connexion</h1>
+                    <div class="infoInscription">
+                        <p class="trait"></p>
+                    </div>
+                </div>
+                <div class="connecter">
+                    <form action="/login" method="post" >
+                        <div id="connecter">
+                            <input type="text"id="connecter" name="username"placeholder="Nom d'utilisateur:">
+                            <br>
+                            <br>
+                        </div>
+                        <div id="connecter">
+                            <input type="password" name="password"placeholder="Mot de passe">
+                            <br>
+                            <br>
+                        </div>
+                        <input type="submit" value="Se connecter">
+                        <br>
+                        <br>
+                        <a href="creation.html">créer un compte</a>
+                    </form>
+                </div>
             </div>
         </div>
-        
-        <div class="rectangle4"></div>
-        <div class="connecter">
-            <form action="/login" method="post" >
-                <div id="connecter">
-                    Nom d'utilisateur:<input type="text"id="connecter" name="username">
-                    <br>
-                    <br>
-                </div>
-                <div id="connecterm">
-                    Mot de passe:<input type="password" name="password">
-                    <br>
-                    <br>
-                </div>
-                <input type="submit" value="Se connecter">
-                <br>
-                <br>
-                <a href="creation.html">créer un compte</a>
-            </form>
-        </div>
-        <img class="illustration2" src="../../image/illustration.png">
-    </body>
-
-    <div class="rectangle5">
-        <a class ="lien2" href="menu.html">retour au menu</a>
-    </div>
+        </body>
 </html>

@@ -5,23 +5,45 @@
     <head>​
 
         <meta charset="UTF-8" />
-        <link href="../css/compte.css" rel="stylesheet">
+        <link href="../css/style.css" rel="stylesheet">
         <script src="../script/script.js"></script>​​
 
-        <title>création</title>​
+        <title>compte</title>​
 
     </head>​
 
     <body>
-        <div class="compte">
-            <form action="/login" method="post">
-                Entrer votre addresse mail:<input type="text" name="mail">
-                Entrer votre pseudo:<input type="text" name="username">
-                Entrer votre mot de passe:<input type="password" name="password">
-                Confirmer votre mot de passe:<input type="password" name="password2">
-                <input type="submit" value="Confirmer" method="post">
-            </form>
+        <div class="rectangle4">
+            <div class="rectangle5">
+                <img class="illustration2" src="../../image/illustration.png">
+                <div class="rectangle6">
+                    <a class ="lien2" href="menu.html">retour au menu</a>
+                </div>
+                <div class="inscription">
+                    <h1>Connexion</h1>
+                    <div class="infoInscription">
+                        <p class="trait"></p>
+                    </div>
+                </div>
+                <div class="connecter">
+                    <form action="/login" method="post" >
+                        <div id="connecter">
+                            <input type="text"id="connecter" name="username"placeholder="Nom d'utilisateur:">
+                            <br>
+                            <br>
+                        </div>
+                        <div id="connecter">
+                            <input type="password" name="password"placeholder="Mot de passe">
+                            <br>
+                            <br>
+                        </div>
+                        <input type="submit" value="Se connecter">
+                        <br>
+                        <br>
+                        <a href="creation.html">créer un compte</a>
+                    </form>
+                </div>
+            </div>
         </div>
-    </body>
-
+        </body>
 </html>
