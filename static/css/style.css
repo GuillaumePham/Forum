@@ -1,4 +1,5 @@
 body{
+    font-family: 'Courier New', Courier, monospace;
     background-repeat: no-repeat;
     background-size: cover;
     background-color: rgb(39, 23, 16);
@@ -51,12 +52,9 @@ body{
     width: 200px;
     padding-left: 20px;
     background-color: rgb(253, 253, 253);
-    transition: width 0.7s;
-    -moz-transition: width 0.7s;
-     cursor: text;
+    cursor: text;
     overflow: hidden;
     display: block;
-    position: absolute;
     left: 85%;
 }
 
@@ -71,7 +69,7 @@ body{
     background-color: rgb(253, 253, 253);
     transition: width 0.7s;
     -moz-transition: width 0.7s;
-     cursor: text;
+    cursor: text;
     overflow: hidden;
     display: block;
     left: 85%;
@@ -96,15 +94,15 @@ body{
 
 .illustration{
     width: 80vw;
-    height: 100vh;
+    height: 80vh;
     margin-top: 10vh;
     margin-left: 10vw;
 }
 
 .recherche{
-   position: absolute;
-   margin-top: -110vh;
-   margin-left: 50vw;
+    position: absolute;
+    margin-top: -90vh;
+    margin-left: 50vw;
 }
 
 .lien{
@@ -129,19 +127,15 @@ body{
 }
 
 .rectangle{
-    position: absolute;
     background-color: white;
-    margin-top: -45vh;
     margin-left: 10vw;
     width: 80vw;
     height: 90vh;
 }
 
 .rectangle2{
-    position: absolute;
     background-color: rgb(39, 23, 16);
     margin-left: 10vw;
-    margin-top: -40vh;
     width: 80vw;
     height: 8vh;
 }
@@ -152,11 +146,11 @@ body{
 }
 
 .rectangle3{
-    position: absolute;
-    background-color: rgb(39, 23, 16);
+    background-color: white;
     width: 80vw;
     height: 8vh;
     margin-left: 10vw;
+    margin-top: -60vh;
 }
 
 .rectangle3 > h1{
@@ -226,11 +220,23 @@ table thead {
     background-color: rgb(39, 23, 16);
     color: white;
 }
-
-td {
-    border: solid ;
-    height: 50px;
-    width: calc(100%/3,5);
+td.firstColumn {
+    width : 40vw;
+}
+td.secondColumn {
+    width : 10vw;
+}
+td.thirdColumn {
+    width : 10vw;
+}
+td.fourthColumn {
+    width : 10vw;
+}
+table tbody td {
+    border-right: 1px solid black;
+}
+table tbody tr {
+    height: 3rem;
 }
 
 .viking >td {
@@ -264,4 +270,22 @@ td {
 .infoInscription{
 
     margin-left: -25vw;
+}
+
+.head{
+    background-color:rgb(77, 58, 58);
+    margin:12%;
+    padding:5%;
+
+}
+
+.publication{
+    background-color: rgb(213, 213, 210);
+    border: 2px solid rgb(163, 161, 161);
+    border-radius: 8px;
+    padding:25px
+}
+
+#newMessage{
+    
 }

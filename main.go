@@ -17,6 +17,7 @@ type Users struct{
     Adresse_mail string
     Password string
 }
+
 type ALL struct{
     User Users
     connect bool
@@ -27,6 +28,7 @@ type publication struct{
     Contenu string
     topic string
 }
+
 const (
 	Host = "localhost"
 	Port = "4444"
@@ -67,12 +69,13 @@ func connectUser(name string) (Users, error){
     return user, err
 }
 func login(w http.ResponseWriter, r *http.Request){
+    log.Println("")
     log.Println("funtion calling")
     data.User = Users{}
     name := r.FormValue("username")
     password := r.FormValue("password")
-    log.Println("test")
     log.Println(r.FormValue("submit"))
+    log.Println("test")
     if r.FormValue("submit") != ""{
         log.Println("oui")
         connectUser(name)
@@ -82,13 +85,13 @@ func login(w http.ResponseWriter, r *http.Request){
         if password == megapassword{
             log.Println(data.User.Pseudo)
             data.connect = true
-            http.Redirect(w, r, "http://" + Host + ":" + Port + "/test", http.StatusMovedPermanently)
+            http.Redirect(w, r, "http://" + Host + ":" + Port + "/creation", http.StatusMovedPermanently)
         }else{
             log.Println("wrong password")
             data.connect = false
         }
     }
-    tmpl.ExecuteTemplate(w, "login", data)
+    tmpl.ExecuteTemplate(w, "account", data)
 }
 func dbz(w http.ResponseWriter, r *http.Request, register Users){
     rows, err:= db.Query("INSERT INTO users (`pseudo`, `adresse_mail`, `motdepasse`) VALUES (?,?,?)", register.Pseudo, register.Adresse_mail, register.Password)
@@ -113,12 +116,12 @@ func dbz(w http.ResponseWriter, r *http.Request, register Users){
         fmt.Println(id_user, firstname, lastname, password)
     }*/
 }
-func search(){
+//func search(){
     /*bouh, err:= db.Query("SElECT FROM users (`pseudo`) where 'pseudo'="+register.Pseudo).Scan()
     const oui = "<p>"+bouh+"</p>"
     fmt.Fprint(w, oui)*/
     
-}
+//}
 
 func publishForm(w http.ResponseWriter, r *http.Request){
     if r.FormValue("publish") != "" {
@@ -137,6 +140,9 @@ func publish(w http.ResponseWriter, r *http.Request, post publication){
     }
     defer rows.Close()
 }
+func menu(w http.ResponseWriter, r *http.Request){
+    tmpl.ExecuteTemplate(w, "menu", data)
+}
 func main() {
     db, _ = sql.Open( "mysql", "root:@tcp(localhost:3306)/testdb")
     defer db.Close()
@@ -144,17 +150,18 @@ func main() {
     pageServer := http.FileServer(http.Dir("static/html"))
     http.Handle("/html/", http.StripPrefix("/html/", pageServer) )
     styleServer := http.FileServer(http.Dir("static/css"))
-    http.Handle("/css/", http.StripPrefix("/css/", styleServer) )
+    http.Handle("/css/", http.StripPrefix("/css/", styleServer))
+    imageServer:= http.FileServer(http.Dir("../../image"))
+    http.Handle("/image/", http.StripPrefix("/image/",imageServer))
 
     var err error
     tmpl, err = template.New("").ParseGlob("static/html/*.html")
     log.Print(err)
 
-    http.HandleFunc("/test", pages)
+    http.HandleFunc("/creation", pages)
     http.HandleFunc("/connect", login)
     http.HandleFunc("/publication",publishForm)
-    
+    http.HandleFunc("/",menu)
     print("Lancement de la page instanciée sur : " + Host + ":" + Port ) 
     http.ListenAndServe(Host+":"+Port, nil)
-    
 }

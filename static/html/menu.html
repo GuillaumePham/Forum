@@ -1,3 +1,4 @@
+{{define "menu"}}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,42 +8,40 @@
     <link rel="stylesheet" href="../css/style.css" type="text/css">
     <title>Menu</title>
 </head>
-    <body>
-        <img class="illustration" src="../../image/compte.png">
-
-
+    <body class="menu">
         <form class="recherche">
             <input type="search" onkeyup="search()" id="input-search" placeholder="Recherche...">
         </form>
-        <a class="lien" href="compte.html">Connexion</a>
+        <img class="illustration" src="../../image/bonjour.png">
+        <a class="lien" href="connect">Connexion</a>
         <div class="rectangle">
             <table class="table">
                 <thead>
                     <tr>
-                        <td>Histoire Viking</td>
-                        <td>sujet</td>
-                        <td>message</td>
-                        <td>Dernier message</td>
+                        <td class="firstColumn">Histoire Viking</td>
+                        <td class="secondColumn">sujet</td>
+                        <td class="thirdColumn">message</td>
+                        <td class="fourthColumn">Dernier message</td>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td class="viking"></td>
-                        <td class="viking"></td>
-                        <td class="viking"></td>
-                        <td class="viking"></td>
+                        <td class="viking firstColumn"></td>
+                        <td class="viking secondColumn"></td>
+                        <td class="viking thirdColumn"></td>
+                        <td class="viking fourthColumn"></td>
                     </tr>
                     <tr>
-                        <td class="viking"></td>
-                        <td class="viking"></td>
-                        <td class="viking"></td>
-                        <td class="viking"></td>
+                        <td class="viking firstColumn"></td>
+                        <td class="viking secondColumn"></td>
+                        <td class="viking thirdColumn"></td>
+                        <td class="viking fourthColumn"></td>
                     </tr>
                     <tr>
-                        <td class="viking"></td>
-                        <td class="viking"></td>
-                        <td class="viking"></td>
-                        <td class="viking"></td>
+                        <td class="viking firstColumn"></td>
+                        <td class="viking secondColumn"></td>
+                        <td class="viking thirdColumn"></td>
+                        <td class="viking fourthColumn"></td>
                     </tr>
                 </tbody>
             </table>
@@ -51,33 +50,34 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <td>Oeuvre</td>
-                        <td>sujet</td>
-                        <td>message</td>
-                        <td>Dernier message</td>
+                        <td class="firstColumn">Oeuvre</td>
+                        <td class="secondColumn">sujet</td>
+                        <td class="thirdColumn">message</td>
+                        <td class="fourthColumn">Dernier message</td>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td class="viking"></td>
-                        <td class="viking"></td>
-                        <td class="viking"></td>
-                        <td class="viking"></td>
+                        <td class="viking firstColumn"></td>
+                        <td class="viking secondColumn"></td>
+                        <td class="viking thirdColumn"></td>
+                        <td class="viking fourthColumn"></td>
                     </tr>
                     <tr>
-                        <td class="viking"></td>
-                        <td class="viking"></td>
-                        <td class="viking"></td>
-                        <td class="viking"></td>
+                        <td class="viking firstColumn"></td>
+                        <td class="viking secondColumn"></td>
+                        <td class="viking thirdColumn"></td>
+                        <td class="viking fourthColumn"></td>
                     </tr>
                     <tr>
-                        <td class="viking"></td>
-                        <td class="viking"></td>
-                        <td class="viking"></td>
-                        <td class="viking"></td>
+                        <td class="viking firstColumn"></td>
+                        <td class="viking secondColumn"></td>
+                        <td class="viking thirdColumn"></td>
+                        <td class="viking fourthColumn"></td>
                     </tr>
                 </tbody>
             </table>
         </div>​
     </body>​
 </html>
+{{end}}
