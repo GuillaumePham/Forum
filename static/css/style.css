@@ -2,8 +2,12 @@ body{
     font-family: 'Courier New', Courier, monospace;
     background-repeat: no-repeat;
     background-size: cover;
-    background-color: rgb(39, 23, 16);
     background-attachment:fixed;
+   
+}
+
+.cree{
+    background-color: rgb(39, 23, 16);
 }
 
 .titre{
@@ -44,7 +48,6 @@ body{
 }
 
 #input-search{
-    margin: auto;
     padding: 15px;
     border-radius: 30px;
     border: 3px solid rgb(0, 0, 0);
@@ -55,11 +58,9 @@ body{
     cursor: text;
     overflow: hidden;
     display: block;
-    left: 85%;
 }
 
-.connecter input{
-    margin: auto;
+.container{
     padding: 15px;
     border-radius: 30px;
     border: 3px solid rgb(0, 0, 0);
@@ -67,41 +68,50 @@ body{
     width: 200px;
     padding-left: 20px;
     background-color: rgb(253, 253, 253);
-    transition: width 0.7s;
-    -moz-transition: width 0.7s;
     cursor: text;
     overflow: hidden;
     display: block;
-    left: 85%;
 }
 
-.connecter2 input{
-    margin: auto;
+.connecter > input{
+    display: block;
     padding: 15px;
     border-radius: 30px;
     border: 3px solid rgb(0, 0, 0);
-    outline: none;
-    width: 200px;
-    padding-left: 20px;
     background-color: rgb(253, 253, 253);
-    transition: width 0.7s;
-    -moz-transition: width 0.7s;
     cursor: text;
-    overflow: hidden;
-    display: block;
-    left: 85%;
 }
 
+.connecter > form{
+    position: relative;
+    left: 15%;
+}
+.conteneur{
+    padding-top:5rem;
+    text-align: center;
+    border-radius: 30px;
+    border: 3px solid rgb(0, 0, 0);
+    height: 15rem
+}
+.bouton{
+    text-align: center;
+    
+}
+.bouton > input{
+    margin-top: 0.1rem;
+    border-radius: 3px;
+    border: 3px solid rgb(0, 0, 0);
+    background-color: rgb(253, 253, 253);
+}
 .illustration{
     width: 80vw;
     height: 80vh;
     margin-top: 10vh;
-    margin-left: 10vw;
+    margin-left: 9vw;
 }
 
 .recherche{
     position: absolute;
-    margin-top: -90vh;
     margin-left: 50vw;
 }
 
@@ -119,7 +129,6 @@ body{
 .lien2{
     cursor: pointer;
     text-decoration: none;
-    color: white;
     background-color: rgba(240, 248, 255, 0.268);
     padding: 1vh;
     margin-left: 10vw;
@@ -148,7 +157,6 @@ body{
 .rectangle3{
     background-color: white;
     width: 80vw;
-    height: 8vh;
     margin-left: 10vw;
     margin-top: -60vh;
 }
@@ -261,7 +269,7 @@ table tbody tr {
 
 .trait{
     margin-top: 10vh;
-    margin-left: -9.9vw;
+    margin-left: -14vw;
     width: 922px;
     height: 3px;
     border-bottom: solid 2px black;
@@ -272,20 +280,76 @@ table tbody tr {
     margin-left: -25vw;
 }
 
+.first{
+    background-color:white;
+}
+
 .head{
     background-color:rgb(77, 58, 58);
-    margin:12%;
-    padding:5%;
-
+    padding:1px;
+    text-align: center;
 }
 
 .publication{
     background-color: rgb(213, 213, 210);
     border: 2px solid rgb(163, 161, 161);
     border-radius: 8px;
-    padding:25px
+    padding:25px;
+}
+
+#pseudo{
+    display:flex;
+    justify-content: flex-start,space-around;
 }
 
 #newMessage{
+    border: 2px solid rgb(163, 161, 161);
+    border-radius:20px;
+    width:150px ;
+    padding:10px;
+    justify-content:flex-end;
+}
+
+#message{
+    border:white;
+    border-radius:20px;
+    padding:4%;
+    width:80%;
+}
+
+#sujet{
+
+}
+
+#send{
+
+}
+
+.menu{
+    background-color: rgb(39, 23, 16);
+}
+.conteneur{
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    background-color: white;
+}
+.marron{
+    text-align: center  ;
+    background-color: rgb(39, 23, 16);
+}
+.img{
+    background-image: url(../../image/compte.png);
+}
+.marron > h1 {
+    color: white;
+}
+.lien_creation{
+    background-color: white;
+    padding: 1rem 1rem 1rem 1rem;
+    border: 3px solid black;
+    border-radius: 10rem;
+    text-decoration: none;
+    
     
 }

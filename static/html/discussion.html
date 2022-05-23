@@ -12,17 +12,19 @@
 <html lang="fr">​
     <body class="fist">
       <div class="all">
-        <p id="newMessage"><i>Nouveau message</i></p>
         <h1>Vie et Culture</h1>
+        <p id="newMessage"><i>Nouveau message</i></p>
+
         <div class="head">
           <h2> Sujets</h2>
         </div>
 
         <div class="publication">
+          <p id="pseudo"><i>Utilisateur</i></p>
             <form>
-                <input type="text" value="contenu" name="contenu">
-                <input type="text" value="topic" placeholder="topic" ><br><br><br>
-                <input type="submit" value="publish" name="publish">
+                <input type="text" id="message" value="contenu" name="contenu">
+                <input type="text" id="sujet" value="topic" placeholder="topic" ><br><br><br>
+                <input type="submit" id="send" value="publish" name="publish">
             </form>          
         </div>
       </div>

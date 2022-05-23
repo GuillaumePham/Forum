@@ -85,7 +85,7 @@ func login(w http.ResponseWriter, r *http.Request){
         if password == megapassword{
             log.Println(data.User.Pseudo)
             data.connect = true
-            http.Redirect(w, r, "http://" + Host + ":" + Port + "/creation", http.StatusMovedPermanently)
+            http.Redirect(w, r, "http://" + Host + ":" + Port + "/", http.StatusMovedPermanently)
         }else{
             log.Println("wrong password")
             data.connect = false
@@ -151,7 +151,7 @@ func main() {
     http.Handle("/html/", http.StripPrefix("/html/", pageServer) )
     styleServer := http.FileServer(http.Dir("static/css"))
     http.Handle("/css/", http.StripPrefix("/css/", styleServer))
-    imageServer:= http.FileServer(http.Dir("../../image"))
+    imageServer:= http.FileServer(http.Dir("static/image"))
     http.Handle("/image/", http.StripPrefix("/image/",imageServer))
 
     var err error
